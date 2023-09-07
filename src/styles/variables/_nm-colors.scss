@@ -1,0 +1,90 @@
+@import "helpers/nm-color-function";
+
+/**
+    Contrast (оттенки черного)
+ */
+$color-contrast-0: var(--color-contrast-0, (255, 255, 255));
+$color-contrast-20: var(--color-contrast-20, (249, 249, 249));
+$color-contrast-40: var(--color-contrast-40, (245, 244, 242));
+$color-contrast-50: var(--color-contrast-50, (240, 238, 235));
+$color-contrast-100: var(--color-contrast-100, (231, 228, 222));
+$color-contrast-200: var(--color-contrast-200, (204, 202, 197));
+$color-contrast-300: var(--color-contrast-300, (178, 176, 171));
+$color-contrast-400: var(--color-contrast-400, (152, 150, 145));
+$color-contrast-450: var(--color-contrast-450, (133, 132, 128));
+$color-contrast-500: var(--color-contrast-500, (122, 121, 118));
+$color-contrast-600: var(--color-contrast-600, (97, 96, 93));
+$color-contrast-700: var(--color-contrast-700, (71, 70, 69));
+$color-contrast-750: var(--color-contrast-750, (56, 55, 54));
+$color-contrast-800: var(--color-contrast-800, (46, 45, 44));
+$color-contrast-850: var(--color-contrast-850, (36, 36, 35));
+$color-contrast-900: var(--color-contrast-900, (26, 26, 25));
+$color-contrast-950: var(--color-contrast-950, (20, 20, 20));
+$color-contrast-980: var(--color-contrast-980, (10, 10, 10));
+$color-contrast-1000: var(--color-contrast-1000, (0, 0, 0));
+
+/**
+    Primary (основной цвет)
+ */
+$color-primary-20: var(--color-primary-20, (255, 253, 245));
+$color-primary-40: var(--color-primary-40, (255, 250, 235));
+$color-primary-50: var(--color-primary-50, (255, 245, 214));
+$color-primary-100: var(--color-primary-100, (255, 234, 173));
+$color-primary-200: var(--color-primary-200, (250, 222, 140));
+$color-primary-300: var(--color-primary-300, (250, 216, 115));
+$color-primary-400: var(--color-primary-400, (250, 204, 70));
+$color-primary-500: var(--color-primary-500, (250, 198, 45));
+$color-primary-600: var(--color-primary-600, (250, 189, 5));
+$color-primary-700: var(--color-primary-700, (240, 181, 5));
+$color-primary-800: var(--color-primary-800, (225, 171, 8));
+$color-primary-900: var(--color-primary-900, (148, 102, 33));
+
+/**
+    Accent (цвет акцента)
+ */
+$color-accent-20: var(--color-accent-20, (244, 250, 254));
+$color-accent-40: var(--color-accent-40, (230, 242, 250));
+$color-accent-50: var(--color-accent-50, (205, 231, 249));
+$color-accent-100: var(--color-accent-100, (166, 210, 239));
+$color-accent-200: var(--color-accent-200, (120, 182, 223));
+$color-accent-400: var(--color-accent-400, (85, 162, 214));
+$color-accent-500: var(--color-accent-500, (39, 148, 219));
+$color-accent-600: var(--color-accent-600, (15, 122, 193));
+$color-accent-700: var(--color-accent-700, (15, 116, 184));
+$color-accent-750: var(--color-accent-750, (20, 106, 163));
+$color-accent-800: var(--color-accent-800, (22, 100, 153));
+$color-accent-850: var(--color-accent-850, (18, 93, 143));
+$color-accent-880: var(--color-accent-880, (17, 80, 122));
+$color-accent-900: var(--color-accent-900, (8, 40, 61));
+
+/**
+    Warn (цвет ошибки)
+ */
+$color-warn-20: var(--color-warn-20, (250, 240, 240));
+$color-warn-40: var(--color-warn-40, (250, 230, 231));
+$color-warn-50: var(--color-warn-50, (245, 215, 217));
+$color-warn-100: var(--color-warn-100, (245, 186, 188));
+$color-warn-200: var(--color-warn-200, (235, 150, 154));
+$color-warn-300: var(--color-warn-300, (235, 132, 135));
+$color-warn-400: var(--color-warn-400, (235, 103, 108));
+$color-warn-500: var(--color-warn-500, (235, 75, 81));
+$color-warn-600: var(--color-warn-600, (235, 56, 63));
+$color-warn-700: var(--color-warn-700, (230, 52, 58));
+$color-warn-750: var(--color-warn-750, (224, 45, 51));
+$color-warn-800: var(--color-warn-800, (219, 31, 38));
+
+/**
+    Success (цвет успеха)
+ */
+$color-success-20: var(--color-success-20, (242, 250, 240));
+$color-success-40: var(--color-success-40, (221, 245, 215));
+$color-success-50: var(--color-success-50, (194, 240, 182));
+$color-success-100: var(--color-success-100, (151, 224, 135));
+$color-success-200: var(--color-success-200, (126, 219, 105));
+$color-success-300: var(--color-success-300, (117, 204, 97));
+$color-success-400: var(--color-success-400, (105, 193, 85));
+$color-success-500: var(--color-success-500, (100, 184, 81));
+$color-success-600: var(--color-success-600, (94, 173, 76));
+$color-success-700: var(--color-success-700, (86, 164, 69));
+$color-success-750: var(--color-success-750, (73, 153, 55));
+$color-success-800: var(--color-success-800, (64, 143, 46));

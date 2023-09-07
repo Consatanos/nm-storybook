@@ -1,0 +1,69 @@
+@use "mixins/nm-button" as btn;
+
+.nm-btn {
+  @include btn.button-base;
+}
+
+.nm-btn_large {
+  @include btn.size(large);
+
+  &.nm-btn_single-icon {
+    @include btn.size-icon(large);
+  }
+}
+
+.nm-btn_medium {
+  @include btn.size(medium);
+
+  &.nm-btn_single-icon {
+    @include btn.size-icon(medium);
+  }
+}
+
+.nm-btn_small {
+  @include btn.size(small);
+
+  &.nm-btn_single-icon {
+    @include btn.size-icon(small);
+  }
+}
+
+.nm-btn_primary {
+  @include btn.theme(primary);
+}
+
+.nm-btn_secondary {
+  @include btn.theme(secondary);
+}
+
+.nm-btn_tertiary {
+  @include btn.theme(tertiary);
+}
+
+.nm-btn_border-accent {
+  @include btn.theme(border-accent);
+}
+
+.nm-btn_blue-accent {
+  @include btn.theme(blue-accent);
+}
+
+.nm-btn_success {
+  @include btn.theme(success);
+}
+
+.nm-btn_danger {
+  @include btn.theme(danger);
+}
+
+.nm-btn_invert-primary {
+  @include btn.theme(invert-primary);
+}
+
+.nm-btn_disabled {
+  @include btn.disabled;
+}
+
+.nm-btn_loading {
+  @include btn.loading;
+}

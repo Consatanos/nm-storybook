@@ -1,0 +1,214 @@
+@import "variables/nm-colors";
+@import "variables/nm-main";
+@import "mixins/nm-typography";
+
+@mixin button-base {
+  @include ui-p($weight: 500);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-family: inherit;
+  white-space: nowrap;
+  outline: transparent;
+  transition: $animation-speed;
+  cursor: pointer;
+}
+
+@mixin link-base {
+  @include ui-p($weight: 500);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-family: inherit;
+  white-space: nowrap;
+  outline: transparent;
+  transition: $animation-speed;
+  text-decoration: none;
+}
+
+@mixin size($size: medium) {
+  @if $size == large {
+    padding: 12px 24px;
+  } @else if $size == medium {
+    padding: 8px 16px;
+  } @else if $size == small {
+    padding: 4px 12px;
+  }
+}
+
+@mixin size-icon($size: medium) {
+  @if $size == large {
+    padding: 14px;
+  } @else if $size == medium {
+    padding: 10px;
+  } @else if $size == small {
+    padding: 6px;
+  }
+}
+
+@mixin theme($theme: primary) {
+  @if $theme == primary {
+    background-color: set-color($color-primary-500);
+    color: set-color($color-contrast-750);
+
+    &:hover {
+      background-color: set-color($color-primary-700);
+    }
+
+    &:active {
+      background-color: set-color($color-primary-800);
+    }
+  } @else if $theme == secondary {
+    background-color: set-color($color-contrast-50);
+    color: set-color($color-contrast-750);
+
+    &:hover {
+      background-color: set-color($color-contrast-100);
+    }
+
+    &:active {
+      background-color: set-color($color-contrast-200);
+    }
+  } @else if $theme == tertiary {
+    box-shadow: inset 0 0 0 1px set-color($color-contrast-100);
+    background-color: set-color($color-contrast-0);
+    color: set-color($color-contrast-750);
+
+    &:hover {
+      background-color: set-color($color-contrast-40);
+    }
+
+    &:active {
+      background-color: set-color($color-contrast-100);
+    }
+  } @else if $theme == border-accent {
+    box-shadow: inset 0 0 0 1px set-color($color-primary-500);
+    background-color: set-color($color-contrast-0);
+    color: set-color($color-contrast-750);
+
+    &:hover {
+      background-color: set-color($color-primary-500);
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 1px set-color($color-primary-700);
+      background-color: set-color($color-primary-700);
+    }
+  } @else if $theme == blue-accent {
+    background-color: set-color($color-accent-40);
+    color: set-color($color-accent-600);
+
+    &:hover {
+      background-color: set-color($color-accent-50);
+    }
+
+    &:active {
+      background-color: set-color($color-accent-100);
+    }
+  } @else if $theme == success {
+    background-color: set-color($color-success-40);
+    color: set-color($color-success-750);
+
+    &:hover {
+      background-color: set-color($color-success-50);
+    }
+
+    &:active {
+      background-color: set-color($color-success-100);
+    }
+  } @else if $theme == danger {
+    background-color: set-color($color-warn-40);
+    color: set-color($color-warn-700);
+
+    &:hover {
+      background-color: set-color($color-warn-50);
+    }
+
+    &:active {
+      background-color: set-color($color-warn-100);
+    }
+  } @else if $theme == invert-primary {
+    box-shadow: 0 4px 12px set-color($color-contrast-1000, 0.04);
+    background-color: set-color($color-contrast-0);
+    color: set-color($color-contrast-750);
+
+    &:hover {
+      background-color: set-color($color-contrast-0, 0.7);
+    }
+
+    &:active {
+      background-color: set-color($color-contrast-0, 0.5);
+    }
+  }
+}
+
+@mixin disabled {
+  box-shadow: none;
+  background-color: set-color($color-contrast-50);
+  pointer-events: none;
+  color: set-color($color-contrast-300);
+}
+
+@mixin loading {
+  box-shadow: none;
+  background-color: set-color($color-contrast-50);
+  pointer-events: none;
+  position: relative;
+  color: transparent;
+  transition: color 0s;
+
+  &::before {
+    --size: 16px;
+    --weight: 2px;
+
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    width: var(--size);
+    height: var(--size);
+    border: var(--weight) solid set-color($color-contrast-300);
+    border-top: var(--weight) solid transparent;
+    animation: spin 2s linear infinite;
+  }
+}
+
+@mixin button($size: medium, $theme: primary, $type: default) {
+  @include button-base;
+  @include theme($theme);
+
+  @if $type == single-icon {
+    @include size-icon($size);
+  } @else {
+    @include size($size);
+  }
+}
+
+@mixin link($size: medium, $theme: primary, $type: default) {
+  @include link-base;
+  @include theme($theme);
+
+  @if $type == single-icon {
+    @include size-icon($size);
+  } @else {
+    @include size($size);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

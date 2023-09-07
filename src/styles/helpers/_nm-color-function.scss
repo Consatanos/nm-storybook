@@ -1,0 +1,11 @@
+/**
+    Установка цвета из переменной в RGB, с опциаональным параметром прозрачности
+ */
+
+@function set-color($color, $opacity: false) {
+  @if $opacity {
+    @return RGB($color, $opacity);
+  }
+
+  @return RGB($color);
+}
