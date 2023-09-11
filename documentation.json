@@ -167,68 +167,6 @@
                 }
             },
             "templateData": "<button [class]=\"classes\">\n  <ng-content></ng-content>\n</button>\n"
-        },
-        {
-            "name": "TaskComponent",
-            "id": "component-TaskComponent-87839ab40361ff54d2b860c49b2e3fe1c324d2fb3823cbe9d8a8ea61c433bb6de8eff19b783aa47b37512dd622a0499158cc713ecd3ee11afec7a1d11c1a054a",
-            "file": "src/app/components/task/task.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-task",
-            "styleUrls": [],
-            "styles": [],
-            "template": "<div class=\"list-item\">\n    <label [attr.aria-label]=\"task.title + ''\" for=\"title\">\n        <input\n                type=\"text\"\n                [value]=\"task.title\"\n                readonly=\"true\"\n                id=\"title\"\n                name=\"title\"\n        />\n    </label>\n</div>\n",
-            "templateUrl": [],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "task",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nThe shape of the task object\n",
-                    "description": "<p>The shape of the task object</p>\n",
-                    "line": 23,
-                    "type": "any",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onArchiveTask",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 31,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onPinTask",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 27,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-task',\r\n  template: `\r\n      <div class=\"list-item\">\r\n          <label [attr.aria-label]=\"task.title + ''\" for=\"title\">\r\n              <input\r\n                      type=\"text\"\r\n                      [value]=\"task.title\"\r\n                      readonly=\"true\"\r\n                      id=\"title\"\r\n                      name=\"title\"\r\n              />\r\n          </label>\r\n      </div>\r\n  `,\r\n})\r\nexport default class TaskComponent {\r\n  /**\r\n   * The shape of the task object\r\n   */\r\n  @Input() task: any;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onPinTask = new EventEmitter<Event>();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onArchiveTask = new EventEmitter<Event>();\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": ""
         }
     ],
     "modules": [
@@ -362,50 +300,6 @@
                     "elements": []
                 }
             ]
-        },
-        {
-            "name": "TaskModule",
-            "id": "module-TaskModule-0afb71b2104161257dbd59d83fe50aefe5bf7b5205e177a5a091d180e132d5d5f98b7ce8570affb71841646c45c3dc83eba86555d3f8fecb69d0f13f40ef1682",
-            "description": "",
-            "deprecationMessage": "",
-            "deprecated": false,
-            "file": "src/app/components/task/task.module.ts",
-            "methods": [],
-            "sourceCode": "import { NgModule } from \"@angular/core\";\r\nimport TaskComponent from \"./task.component\";\r\nimport { CommonModule } from \"@angular/common\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    TaskComponent\r\n  ],\r\n  imports: [\r\n    CommonModule\r\n  ],\r\n  exports: [\r\n    TaskComponent\r\n  ]\r\n})\r\n\r\nexport class TaskModule {\r\n\r\n}\r\n",
-            "children": [
-                {
-                    "type": "providers",
-                    "elements": []
-                },
-                {
-                    "type": "declarations",
-                    "elements": [
-                        {
-                            "name": "TaskComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "imports",
-                    "elements": []
-                },
-                {
-                    "type": "exports",
-                    "elements": [
-                        {
-                            "name": "TaskComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "bootstrap",
-                    "elements": []
-                },
-                {
-                    "type": "classes",
-                    "elements": []
-                }
-            ]
         }
     ],
     "miscellaneous": {
@@ -418,27 +312,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "actionsData",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/task/task.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\r\n  onPinTask: action('onPinTask'),\r\n  onArchiveTask: action('onArchiveTask'),\r\n}"
-            },
-            {
-                "name": "Archived",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/task/task.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    task: {\r\n      ...Default.args?.task,\r\n      state: 'TASK_ARCHIVED',\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\r\n  btnClick: action('btnClick'),\r\n}"
             },
             {
                 "name": "Default",
@@ -451,16 +325,6 @@
                 "defaultValue": "{\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.Primary,\r\n    size: ButtonSizeEnum.Medium\r\n  }\r\n}"
             },
             {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/task/task.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    task: {\r\n      id: '1',\r\n      title: 'Test Task',\r\n      state: 'TASK_INBOX',\r\n    },\r\n  },\r\n}"
-            },
-            {
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -468,7 +332,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: 'disabled - соответсвует миксину @include disabled',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.Primary,\r\n    size: ButtonSizeEnum.Medium,\r\n    disabled: true\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'disabled - соответсвует миксину @include disabled',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.Primary,\r\n    disabled: true\r\n  }\r\n}"
             },
             {
                 "name": "Loading",
@@ -478,7 +342,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: 'loading - соответсвует миксину @include loading',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.Primary,\r\n    size: ButtonSizeEnum.Medium,\r\n    loading: true\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'loading - соответсвует миксину @include loading',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.Primary,\r\n    loading: true\r\n  }\r\n}"
             },
             {
                 "name": "meta",
@@ -488,27 +352,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<StoryType>",
-                "defaultValue": "{\r\n  title: 'Button',\r\n  component: ButtonComponent,\r\n  excludeStories: /.*Data$/,\r\n  tags: ['autodocs'],\r\n  render: (args: StoryType) => {\r\n    const {content, ...props} = args;\r\n    return {\r\n      props,\r\n      template: `\r\n        <nm-button\r\n            [theme]=\"theme\"\r\n            [size]=\"size\"\r\n            [singleIcon]=\"singleIcon\"\r\n            [disabled]=\"disabled\"\r\n            [loading]=\"loading\">\r\n          ${content}\r\n        </nm-button>\r\n      `\r\n    };\r\n  }\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/task/task.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<TaskComponent>",
-                "defaultValue": "{\r\n  title: 'Task',\r\n  component: TaskComponent,\r\n  excludeStories: /.*Data$/,\r\n  tags: ['autodocs'],\r\n  render: (args: TaskComponent) => ({\r\n    props: {\r\n      ...args,\r\n      onPinTask: actionsData.onPinTask,\r\n      onArchiveTask: actionsData.onArchiveTask,\r\n    },\r\n  }),\r\n}"
-            },
-            {
-                "name": "Pinned",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/components/task/task.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    task: {\r\n      ...Default.args?.task,\r\n      state: 'TASK_PINNED',\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\r\n  title: 'Design System/Atoms/Button',\r\n  component: ButtonComponent,\r\n  excludeStories: /.*Data$/,\r\n  tags: ['autodocs'],\r\n  render: (args: StoryType) => {\r\n    const {content, ...props} = args;\r\n    return {\r\n      props,\r\n      onPinTask: actionsData.btnClick,\r\n      template: `\r\n        <nm-button\r\n            [theme]=\"theme\"\r\n            [size]=\"size\"\r\n            [singleIcon]=\"singleIcon\"\r\n            [disabled]=\"disabled\"\r\n            [loading]=\"loading\">\r\n          ${content}\r\n        </nm-button>\r\n      `\r\n    };\r\n  }\r\n}"
             },
             {
                 "name": "preview",
@@ -518,7 +362,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+                "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "SimpleText",
@@ -588,7 +432,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: 'blue-accent - соответсвует миксину @include theme(blue-accent)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.BlueAccent,\r\n    size: ButtonSizeEnum.Medium\r\n\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'blue-accent - соответсвует миксину @include theme(blue-accent)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.BlueAccent\r\n\r\n  }\r\n}"
             },
             {
                 "name": "ThemeBorderAccent",
@@ -598,7 +442,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: 'border-accent - соответсвует миксину @include theme(border-accent)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.BorderAccent,\r\n    size: ButtonSizeEnum.Medium\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'border-accent - соответсвует миксину @include theme(border-accent)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.BorderAccent\r\n  }\r\n}"
             },
             {
                 "name": "ThemeDanger",
@@ -608,7 +452,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: 'danger - соответсвует миксину @include theme(danger)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.Danger,\r\n    size: ButtonSizeEnum.Medium\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'danger - соответсвует миксину @include theme(danger)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.Danger\r\n  }\r\n}"
             },
             {
                 "name": "ThemeInvertPrimary",
@@ -618,7 +462,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: 'invert-primary - соответсвует миксину @include theme(invert-primary)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.InvertPrimary,\r\n    size: ButtonSizeEnum.Medium\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'invert-primary - соответсвует миксину @include theme(invert-primary)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.InvertPrimary\r\n  }\r\n}"
             },
             {
                 "name": "ThemePrimary",
@@ -628,7 +472,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: 'primary - соответсвует миксину @include theme(primary)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.Primary,\r\n    size: ButtonSizeEnum.Medium\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'primary - соответсвует миксину @include theme(primary)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.Primary\r\n  }\r\n}"
             },
             {
                 "name": "ThemeSecondary",
@@ -638,7 +482,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: 'secondary - соответсвует миксину @include theme(secondary)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.Secondary,\r\n    size: ButtonSizeEnum.Medium\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'secondary - соответсвует миксину @include theme(secondary)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.Secondary\r\n  }\r\n}"
             },
             {
                 "name": "ThemeSuccess",
@@ -648,7 +492,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: 'success - соответсвует миксину @include theme(success)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.Success,\r\n    size: ButtonSizeEnum.Medium\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'success - соответсвует миксину @include theme(success)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.Success\r\n  }\r\n}"
             },
             {
                 "name": "ThemeTertiary",
@@ -658,7 +502,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: 'tertiary - соответсвует миксину @include theme(tertiary)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.Tertiary,\r\n    size: ButtonSizeEnum.Medium\r\n  }\r\n}"
+                "defaultValue": "{\r\n  name: 'tertiary - соответсвует миксину @include theme(tertiary)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.Tertiary\r\n  }\r\n}"
             }
         ],
         "functions": [],
@@ -669,17 +513,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<StoryType>",
                 "file": "src/app/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 180
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<TaskComponent>",
-                "file": "src/app/components/task/task.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -797,7 +630,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{}"
+                    "defaultValue": "{\r\n  btnClick: action('btnClick'),\r\n}"
                 },
                 {
                     "name": "Default",
@@ -817,7 +650,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: 'disabled - соответсвует миксину @include disabled',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.Primary,\r\n    size: ButtonSizeEnum.Medium,\r\n    disabled: true\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  name: 'disabled - соответсвует миксину @include disabled',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.Primary,\r\n    disabled: true\r\n  }\r\n}"
                 },
                 {
                     "name": "Loading",
@@ -827,7 +660,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: 'loading - соответсвует миксину @include loading',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.Primary,\r\n    size: ButtonSizeEnum.Medium,\r\n    loading: true\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  name: 'loading - соответсвует миксину @include loading',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.Primary,\r\n    loading: true\r\n  }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -837,7 +670,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<StoryType>",
-                    "defaultValue": "{\r\n  title: 'Button',\r\n  component: ButtonComponent,\r\n  excludeStories: /.*Data$/,\r\n  tags: ['autodocs'],\r\n  render: (args: StoryType) => {\r\n    const {content, ...props} = args;\r\n    return {\r\n      props,\r\n      template: `\r\n        <nm-button\r\n            [theme]=\"theme\"\r\n            [size]=\"size\"\r\n            [singleIcon]=\"singleIcon\"\r\n            [disabled]=\"disabled\"\r\n            [loading]=\"loading\">\r\n          ${content}\r\n        </nm-button>\r\n      `\r\n    };\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  title: 'Design System/Atoms/Button',\r\n  component: ButtonComponent,\r\n  excludeStories: /.*Data$/,\r\n  tags: ['autodocs'],\r\n  render: (args: StoryType) => {\r\n    const {content, ...props} = args;\r\n    return {\r\n      props,\r\n      onPinTask: actionsData.btnClick,\r\n      template: `\r\n        <nm-button\r\n            [theme]=\"theme\"\r\n            [size]=\"size\"\r\n            [singleIcon]=\"singleIcon\"\r\n            [disabled]=\"disabled\"\r\n            [loading]=\"loading\">\r\n          ${content}\r\n        </nm-button>\r\n      `\r\n    };\r\n  }\r\n}"
                 },
                 {
                     "name": "SimpleText",
@@ -907,7 +740,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: 'blue-accent - соответсвует миксину @include theme(blue-accent)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.BlueAccent,\r\n    size: ButtonSizeEnum.Medium\r\n\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  name: 'blue-accent - соответсвует миксину @include theme(blue-accent)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.BlueAccent\r\n\r\n  }\r\n}"
                 },
                 {
                     "name": "ThemeBorderAccent",
@@ -917,7 +750,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: 'border-accent - соответсвует миксину @include theme(border-accent)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.BorderAccent,\r\n    size: ButtonSizeEnum.Medium\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  name: 'border-accent - соответсвует миксину @include theme(border-accent)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.BorderAccent\r\n  }\r\n}"
                 },
                 {
                     "name": "ThemeDanger",
@@ -927,7 +760,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: 'danger - соответсвует миксину @include theme(danger)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.Danger,\r\n    size: ButtonSizeEnum.Medium\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  name: 'danger - соответсвует миксину @include theme(danger)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.Danger\r\n  }\r\n}"
                 },
                 {
                     "name": "ThemeInvertPrimary",
@@ -937,7 +770,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: 'invert-primary - соответсвует миксину @include theme(invert-primary)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.InvertPrimary,\r\n    size: ButtonSizeEnum.Medium\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  name: 'invert-primary - соответсвует миксину @include theme(invert-primary)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.InvertPrimary\r\n  }\r\n}"
                 },
                 {
                     "name": "ThemePrimary",
@@ -947,7 +780,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: 'primary - соответсвует миксину @include theme(primary)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.Primary,\r\n    size: ButtonSizeEnum.Medium\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  name: 'primary - соответсвует миксину @include theme(primary)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.Primary\r\n  }\r\n}"
                 },
                 {
                     "name": "ThemeSecondary",
@@ -957,7 +790,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: 'secondary - соответсвует миксину @include theme(secondary)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.Secondary,\r\n    size: ButtonSizeEnum.Medium\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  name: 'secondary - соответсвует миксину @include theme(secondary)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.Secondary\r\n  }\r\n}"
                 },
                 {
                     "name": "ThemeSuccess",
@@ -967,7 +800,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: 'success - соответсвует миксину @include theme(success)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.Success,\r\n    size: ButtonSizeEnum.Medium\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  name: 'success - соответсвует миксину @include theme(success)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.Success\r\n  }\r\n}"
                 },
                 {
                     "name": "ThemeTertiary",
@@ -977,59 +810,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: 'tertiary - соответсвует миксину @include theme(tertiary)',\r\n  args: {\r\n    content: 'Кнопка',\r\n    theme: ButtonThemeEnum.Tertiary,\r\n    size: ButtonSizeEnum.Medium\r\n  }\r\n}"
-                }
-            ],
-            "src/app/components/task/task.stories.ts": [
-                {
-                    "name": "actionsData",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\r\n  onPinTask: action('onPinTask'),\r\n  onArchiveTask: action('onArchiveTask'),\r\n}"
-                },
-                {
-                    "name": "Archived",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    task: {\r\n      ...Default.args?.task,\r\n      state: 'TASK_ARCHIVED',\r\n    },\r\n  },\r\n}"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    task: {\r\n      id: '1',\r\n      title: 'Test Task',\r\n      state: 'TASK_INBOX',\r\n    },\r\n  },\r\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<TaskComponent>",
-                    "defaultValue": "{\r\n  title: 'Task',\r\n  component: TaskComponent,\r\n  excludeStories: /.*Data$/,\r\n  tags: ['autodocs'],\r\n  render: (args: TaskComponent) => ({\r\n    props: {\r\n      ...args,\r\n      onPinTask: actionsData.onPinTask,\r\n      onArchiveTask: actionsData.onArchiveTask,\r\n    },\r\n  }),\r\n}"
-                },
-                {
-                    "name": "Pinned",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    task: {\r\n      ...Default.args?.task,\r\n      state: 'TASK_PINNED',\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  name: 'tertiary - соответсвует миксину @include theme(tertiary)',\r\n  args: {\r\n    ...SizeMedium.args,\r\n    theme: ButtonThemeEnum.Tertiary\r\n  }\r\n}"
                 }
             ],
             ".storybook/preview.ts": [
@@ -1041,7 +822,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+                    "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n  },\r\n}"
                 }
             ]
         },
@@ -1161,19 +942,6 @@
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 190
-                }
-            ],
-            "src/app/components/task/task.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<TaskComponent>",
-                    "file": "src/app/components/task/task.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
                 }
             ]
         }
@@ -1410,65 +1178,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "ThemeTertiary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/task/task.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "TaskComponent",
-                "coveragePercent": 25,
-                "coverageCount": "1/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/task/task.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "actionsData",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/task/task.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Archived",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/task/task.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/task/task.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/task/task.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Pinned",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

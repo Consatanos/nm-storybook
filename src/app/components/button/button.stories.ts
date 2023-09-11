@@ -11,7 +11,7 @@ export const actionsData = {
 type StoryType = ButtonComponent & { content: InnerHTML | string };
 
 const meta: Meta<StoryType> = {
-  title: 'Button',
+  title: 'Design System/Atoms/Button',
   component: ButtonComponent,
   excludeStories: /.*Data$/,
   tags: ['autodocs'],
@@ -37,7 +37,7 @@ const meta: Meta<StoryType> = {
 export default meta;
 type Story = StoryObj<StoryType>;
 
-export const Default: Story = {
+export const Button: Story = {
   args: {
     content: 'Кнопка',
     theme: ButtonThemeEnum.Primary,
@@ -120,45 +120,40 @@ export const SizeSmall: Story = {
 export const ThemePrimary: Story = {
   name: 'primary - соответсвует миксину @include theme(primary)',
   args: {
-    content: 'Кнопка',
-    theme: ButtonThemeEnum.Primary,
-    size: ButtonSizeEnum.Medium
+    ...SizeMedium.args,
+    theme: ButtonThemeEnum.Primary
   }
 };
 
 export const ThemeSecondary: Story = {
   name: 'secondary - соответсвует миксину @include theme(secondary)',
   args: {
-    content: 'Кнопка',
-    theme: ButtonThemeEnum.Secondary,
-    size: ButtonSizeEnum.Medium
+    ...SizeMedium.args,
+    theme: ButtonThemeEnum.Secondary
   }
 };
 
 export const ThemeTertiary: Story = {
   name: 'tertiary - соответсвует миксину @include theme(tertiary)',
   args: {
-    content: 'Кнопка',
-    theme: ButtonThemeEnum.Tertiary,
-    size: ButtonSizeEnum.Medium
+    ...SizeMedium.args,
+    theme: ButtonThemeEnum.Tertiary
   }
 };
 
 export const ThemeBorderAccent: Story = {
   name: 'border-accent - соответсвует миксину @include theme(border-accent)',
   args: {
-    content: 'Кнопка',
-    theme: ButtonThemeEnum.BorderAccent,
-    size: ButtonSizeEnum.Medium
+    ...SizeMedium.args,
+    theme: ButtonThemeEnum.BorderAccent
   }
 };
 
 export const ThemeBlueAccent: Story = {
   name: 'blue-accent - соответсвует миксину @include theme(blue-accent)',
   args: {
-    content: 'Кнопка',
-    theme: ButtonThemeEnum.BlueAccent,
-    size: ButtonSizeEnum.Medium
+    ...SizeMedium.args,
+    theme: ButtonThemeEnum.BlueAccent
 
   }
 };
@@ -166,27 +161,24 @@ export const ThemeBlueAccent: Story = {
 export const ThemeSuccess: Story = {
   name: 'success - соответсвует миксину @include theme(success)',
   args: {
-    content: 'Кнопка',
-    theme: ButtonThemeEnum.Success,
-    size: ButtonSizeEnum.Medium
+    ...SizeMedium.args,
+    theme: ButtonThemeEnum.Success
   }
 };
 
 export const ThemeDanger: Story = {
   name: 'danger - соответсвует миксину @include theme(danger)',
   args: {
-    content: 'Кнопка',
-    theme: ButtonThemeEnum.Danger,
-    size: ButtonSizeEnum.Medium
+    ...SizeMedium.args,
+    theme: ButtonThemeEnum.Danger
   }
 };
 
 export const ThemeInvertPrimary: Story = {
   name: 'invert-primary - соответсвует миксину @include theme(invert-primary)',
   args: {
-    content: 'Кнопка',
-    theme: ButtonThemeEnum.InvertPrimary,
-    size: ButtonSizeEnum.Medium
+    ...SizeMedium.args,
+    theme: ButtonThemeEnum.InvertPrimary
   }
 };
 
@@ -195,9 +187,8 @@ export const ThemeInvertPrimary: Story = {
 export const Disabled: Story = {
   name: 'disabled - соответсвует миксину @include disabled',
   args: {
-    content: 'Кнопка',
+    ...SizeMedium.args,
     theme: ButtonThemeEnum.Primary,
-    size: ButtonSizeEnum.Medium,
     disabled: true
   }
 };
@@ -207,9 +198,8 @@ export const Disabled: Story = {
 export const Loading: Story = {
   name: 'loading - соответсвует миксину @include loading',
   args: {
-    content: 'Кнопка',
+    ...SizeMedium.args,
     theme: ButtonThemeEnum.Primary,
-    size: ButtonSizeEnum.Medium,
     loading: true
   }
 };
